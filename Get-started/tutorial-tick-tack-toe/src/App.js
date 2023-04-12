@@ -11,28 +11,28 @@ function Square({ value, onSquareClick }) {
 export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
-  function handlClick() {
-    const nextsquare = squares.spice;
-    nextsquare[0] = "X";
-    setSquares(nextsquare);
+  function handleClick(i) {
+    const nextSquares = squares.slice();
+    nextSquares[i] = "X";
+    setSquares(nextSquares);
   }
 
   return (
     <>
       <div className="board-row">
-        <Square value={squares[0]} onClick={handlClick} />
-        <Square value={squares[1]} onClick={handlClick} />
-        <Square value={squares[2]} onClick={handlClick} />
+        <Square value={squares[0]} onClick={handleClick} />
+        <Square value={squares[1]} onClick={handleClick} />
+        <Square value={squares[2]} onClick={handleClick} />
       </div>
       <div className="board-row">
-        <Square value={squares[3]} onClick={handlClick} />
-        <Square value={squares[4]} onClick={handlClick} />
-        <Square value={squares[5]} onClick={handlClick} />
+        <Square value={squares[3]} onClick={handleClick} />
+        <Square value={squares[4]} onClick={handleClick} />
+        <Square value={squares[5]} onClick={handleClick} />
       </div>
       <div className="board-row">
-        <Square value={squares[6]} onClick={handlClick} />
-        <Square value={squares[7]} onClick={handlClick} />
-        <Square value={squares[8]} onClick={handlClick} />
+        <Square value={squares[6]} onClick={handleClick} />
+        <Square value={squares[7]} onClick={handleClick} />
+        <Square value={squares[8]} onClick={handleClick} />
       </div>
     </>
   );
